@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Variáveis CSS de cor e fonte*/
+:root {
+  --branco: #fff;
+  --preto: #000;
+  --amarelo: #f1c40f;
+  --fonte: "Poppins";
+  --cor-de-fundo: linear-gradient(90deg, rgba(74,30,90,1) 0%, rgba(197,106,141,1) 92%);
+  --roxo-escuro: #31143b;
+  --areia: #EADBC8;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  --background: white;
+  --text: black;
+}
+
+body {
+  text-align: center;
+  font-family: var(--fonte);
+  background: var(--cor-de-fundo);
+  box-sizing: border-box;
+  margin: 0;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+body.dark {
+  color: var(--branco);
+  background: var(--preto);
+}
+
+/*Configurando as partículas de fundo*/
+canvas{ 
+    display: block; 
+     vertical-align: bottom;
+}
+
+
+/*Posicionamento das partículas*/
+#particles-js{ 
+    position:absolute; 
+    width: 95vw; 
+    height: 95vh;
+    z-index: -1;
+} 
+
+
+.pomodoro__secao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1{
+  color: var(--branco);
+  font-size: 4rem;
+}
+
+.pomodoro__secao__container {
+  border: 1px solid var(--branco);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  margin: 2.5rem 0 0 0;
+}
+
+.pomodoro__secao__container.dark {
+  border: 1px solid var(--branco);
+}
+
+.pomodoro__secao__container__botoe{
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: var(--roxo-escuro);
+  border-radius: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 17px;
+  width: 40px;
+  transform: scale(1.5);
+  border: 1px solid var(--branco);
+}
+.label.darkLabel{
+  background-color: var(--preto);
+}
+
+.label .ball {
+  background-color: var(--branco);
+  border-radius: 50px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear
+}
+
+.checkbox:checked+.label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon,
+.fa-sun {
+  color: var(--amarelo);
+}
+
+.app__card-button {
+  border-radius: 12px;
+  background-color: var(--branco);
+  padding: 0.5rem;
+  border: var(--branco);
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-family: var(--fonte);
+}
+
+.app__card-button.active {
+  background-color: var(--areia);
+}
+
+.app__card-button--foco{
+  margin: 0 2rem 0 0;
+}
+
+.app__card-timer {
+  margin-top: 0.5rem;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.frase__motivacional{
+  display: none;
+  color: var(--branco);
+}
+
+p a{
+  text-decoration: none;
+  color: var(--preto);
+  background-color: var(--areia);
+  border-radius: 1rem;
+  height: 1rem;
+  padding: .2rem;
+  margin: 1rem 0 0 0;
+}
+
+
+.texto__pop__up{
+  display: none;
+  coloR: var(--branco);
+}
+
+/*RESPONSIVIDADE*/
+@media screen and (max-width: 775px){
+  .pomodoro__secao__container{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .pomodoro__secao__container{
+    width: 75%;
+  }
+}
